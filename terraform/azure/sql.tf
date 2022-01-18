@@ -69,6 +69,7 @@ resource "azurerm_mysql_server" "example" {
     git_repo             = "terragoat"
     yor_trace            = "1ac18c16-09a4-41c9-9a66-6f514050178e"
   }
+  geo_redundant_backup_enabled = true
 }
 
 resource "azurerm_postgresql_server" "example" {
