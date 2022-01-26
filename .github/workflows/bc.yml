@@ -4,9 +4,13 @@ on:
   push:
     branches:
       - master
-jobs:
+jobs: 
   scan:
+    
     runs-on: ubuntu-latest
+    env: 
+     PRISMA_API_URL: https://api.eu.prismacloud.io
+    
     strategy:
       matrix:
         python-version: [3.8]
