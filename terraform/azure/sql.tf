@@ -70,6 +70,7 @@ resource "azurerm_mysql_server" "example" {
     yor_trace            = "1ac18c16-09a4-41c9-9a66-6f514050178e"
   }
   geo_redundant_backup_enabled = true
+  ssl_minimal_tls_version_enforced = "TLS1_2"
 }
 
 resource "azurerm_postgresql_server" "example" {
