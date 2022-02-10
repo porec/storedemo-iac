@@ -100,6 +100,7 @@ resource "azurerm_postgresql_server" "example" {
     yor_trace            = "9eae126d-9404-4511-9c32-2243457df459"
   }
   infrastructure_encryption_enabled = true
+  public_network_access_enabled = false
 }
 
 resource "azurerm_postgresql_configuration" "thrtottling_config" {
