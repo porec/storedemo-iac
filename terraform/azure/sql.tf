@@ -101,6 +101,9 @@ resource "azurerm_postgresql_server" "example" {
   }
   infrastructure_encryption_enabled = true
   public_network_access_enabled = false
+  threat_detection_policy {
+    enabled = true
+  }
 }
 
 resource "azurerm_postgresql_configuration" "thrtottling_config" {
