@@ -31,6 +31,7 @@ resource "azurerm_key_vault" "example" {
   network_acls {
     default_action = "Deny"
   }
+  purge_protection_enabled = true
 }
 
 resource "azurerm_key_vault_key" "generated" {
