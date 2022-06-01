@@ -24,10 +24,11 @@ resource azurerm_app_service "app-service1" {
   location            = var.location
   name                = "terragoat-app-service-${var.environment}${random_integer.rnd_int.result}"
   resource_group_name = azurerm_resource_group.example.name
-  https_only          = true
+  https_only          = false
   site_config {
+    ftps_state = "Disabled"
     dotnet_framework_version = "v6.0"
-    min_tls_version = "1.1"
+    min_tls_version = "1.2"
   }
   tags = {
     git_commit           = "81738b80d571fa3034633690d13ffb460e1e7dea"
@@ -39,8 +40,11 @@ resource azurerm_app_service "app-service1" {
     git_repo             = "terragoat"
     yor_trace            = "13be096d-c599-46e5-bf54-51c6e9732858"
   }
-  auth_settings {
-    enabled = true
+  logs {
+    failed_request_tracing_enabled = true
+  }
+  storage_account {
+    type = "AzureFiles"
   }
 }
 
