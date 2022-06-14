@@ -42,6 +42,7 @@ resource azurerm_app_service "app-service1" {
   auth_settings {
     enabled = true
   }
+  client_cert_enabled = true
 }
 
 resource azurerm_app_service "app-service2" {
