@@ -43,6 +43,7 @@ resource azurerm_app_service "app-service1" {
     enabled = true
   }
   client_cert_enabled = true
+  identity = true
 }
 
 resource azurerm_app_service "app-service2" {
