@@ -25,7 +25,7 @@ resource "aws_lambda_function" "test_lambda" {
   handler       = "index.test"
   runtime       = "nodejs14.x"
   layers        = "arn:aws:lambda:eu-central-1:017000801446:layer:AWSLambdaPowertoolsPython:18"
-}
+
   ephemeral_storage {
     size = 10240 # Min 512 MB and the Max 10240 MB
   }
