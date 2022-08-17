@@ -29,4 +29,7 @@ resource "aws_lambda_function" "test_lambda" {
   ephemeral_storage {
     size = 10240 # Min 512 MB and the Max 10240 MB
   }
+  tracing_config {
+    mode = "PassThrough"
+  }
 }
