@@ -1,5 +1,8 @@
 resource "aws_ecr_repository" "foo" {
   name = "bar"
+  encryption_configuration {
+    encryption_type = "KMS"
+  }
 }
 
 resource "aws_ecr_lifecycle_policy" "foopolicy" {
