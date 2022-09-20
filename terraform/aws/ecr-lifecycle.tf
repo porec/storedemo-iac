@@ -3,6 +3,9 @@ resource "aws_ecr_repository" "foo" {
   encryption_configuration {
     encryption_type = "KMS"
   }
+  image_scanning_configuration {
+    scan_on_push = true
+  }
 }
 
 resource "aws_ecr_lifecycle_policy" "foopolicy" {
