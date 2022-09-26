@@ -2,11 +2,15 @@ name: Bridgecrew
 on:
   pull_request:
   push:
-    branches:
-      - dev
+    branches: [master, dev]
+       
 jobs:
   scan:
     runs-on: ubuntu-latest
+    env: 
+     PRISMA_API_URL: https://api.eu.prismacloud.io
+     GITHUB_HEAD_REF: dev 
+
     strategy:
       matrix:
         python-version: [3.8]
