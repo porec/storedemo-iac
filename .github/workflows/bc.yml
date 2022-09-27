@@ -9,7 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     env: 
      PRISMA_API_URL: https://api.eu.prismacloud.io
-     
+    
+    strategy:
+      matrix:
+        python-version: [3.8] 
     steps:
 
     - uses: actions/checkout@v2
@@ -20,3 +23,4 @@ jobs:
     - name: Install Check and Scan helm chart
       run: |
        pip install -U checkov
+       checkov -d . --framework terraform --brach dev --prisma-cloud-url https://api.eu.prismacloud.io --bc-api-key ${{ secrets.BC_API_KEY }}
