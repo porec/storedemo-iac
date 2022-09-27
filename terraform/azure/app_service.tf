@@ -72,5 +72,8 @@ resource azurerm_app_service "app-service2" {
   }
   identity = true
   client_cert_enabled = true
+  logs {
+    detailed_error_messages_enabled = true
+  }
 }
 
