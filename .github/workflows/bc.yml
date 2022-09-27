@@ -16,10 +16,10 @@ jobs:
         python-version: [3.8]
     steps:
     - uses: actions/checkout@v2
-    - name: Run Bridgecrew 
+    - name: Scan IaC 
       id: Bridgecrew
-      uses: bridgecrewio/bridgecrew-action@master
+      uses: bridgecrewio/checkov-action@master
       with:
         api-key: ${{ secrets.BC_API_KEY }}
-        soft_fail: true
+        soft_fail: false
         directory: terraform/
