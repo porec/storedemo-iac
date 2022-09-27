@@ -21,4 +21,4 @@ jobs:
     - name: Install Check and Scan IaC
       run: |
        pip install -U checkov
-       checkov -d . --framework terraform -b dev --prisma-api-url https://api.eu.prismacloud.io --bc-api-key ${{ secrets.BC_API_KEY }}
+       checkov -d . --framework terraform -b master --prisma-api-url https://api.eu.prismacloud.io --bc-api-key ${{ secrets.BC_API_KEY }}
