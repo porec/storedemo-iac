@@ -48,6 +48,9 @@ resource azurerm_app_service "app-service1" {
   logs {
     detailed_error_messages_enabled = true
   }
+  storage_account {
+    type = "AzureFiles"
+  }
 }
 
 resource azurerm_app_service "app-service2" {
