@@ -46,6 +46,7 @@ resource azurerm_app_service "app-service1" {
   client_cert_enabled = true
   identity = true
   logs {
+    failed_request_tracing_enabled = true
     detailed_error_messages_enabled = true
   }
   storage_account {
