@@ -104,6 +104,7 @@ resource "azurerm_postgresql_server" "example" {
   threat_detection_policy {
     enabled = true
   }
+  ssl_minimal_tls_version_enforced = "TLS1_2"
 }
 
 resource "azurerm_postgresql_configuration" "thrtottling_config" {
